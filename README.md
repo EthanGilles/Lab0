@@ -4,7 +4,7 @@ Group Members: Ethan Gilles, Coby Anderson, Nathaniel Serrano, Mandy Ho
 
 Group Member Tasks:
 
-Ethan: Assign tasks to group members, set up GitHub repository, implementing the hasSameValue method
+Ethan: Creating the interface and class used for the activity, set up GitHub repository, implementing the hasSameValue method
 
 Coby: Implementing the findFrequent method
 
