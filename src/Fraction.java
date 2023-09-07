@@ -22,12 +22,13 @@ public Fraction plus(Fraction input) {
 }
 
 
-
+//Coby Andersen
 @Override
 public Fraction minus(Fraction input) {
-	// TODO Auto-generated method stub
-	return null;
-}
+	int commonDenominator = this.denominator * input.denominator;
+        int newNumerator = (this.numerator * input.denominator) - (input.numerator * this.denominator);
+        return new Fraction(newNumerator, commonDenominator);
+    }
 
 
 
