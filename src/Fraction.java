@@ -39,11 +39,13 @@ public Fraction divide(Fraction input) {
 }
 
 
-
+//Nathaniel Serrano
 @Override
 public Fraction multiply(Fraction input) {
-	// TODO Auto-generated method stub
-	return null;
+	int newNumerator = this.numerator * input.numerator;
+	int newDenominator = this.denominator * input.denominator;
+	Fraction result = new Fraction(newNumerator, newDenominator);
+	return result;
 }
   
   	}
