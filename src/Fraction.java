@@ -1,7 +1,10 @@
+import java.util.*;
 
 public class Fraction implements INumber<Fraction>  {
   int numerator;
   int denominator;
+  
+  
   
   public Fraction(int n, int d) {
 	  numerator = n;
@@ -9,16 +12,26 @@ public class Fraction implements INumber<Fraction>  {
   }
   
  
-// ETHAN
+//Ethan Gilles
  public void print() {
 	 System.out.println(this.numerator + "/" + this.denominator);
 }
 
 
-@Override
+//Ethan Gilles
 public Fraction plus(Fraction input) {
-	// TODO Auto-generated method stub
-	return null;
+	int commonDenominator = lcm(this.denominator, input.denominator);
+	
+	//finds the sum of the numerator using the common denominator
+    int sumNumerator = (this.numerator * (commonDenominator / this.denominator)) + (input.numerator * (commonDenominator / input.denominator));
+    
+    //simplifies using GCD
+    int gcd = gcd(sumNumerator, commonDenominator);
+    int sNumerator = sumNumerator / gcd;
+    int sDenominator = commonDenominator / gcd;
+
+    return new Fraction(sNumerator, sDenominator);
+	
 }
 
 
@@ -51,6 +64,31 @@ public Fraction multiply(Fraction input) {
 	Fraction result = new Fraction(newNumerator, newDenominator);
 	return result;
 }
+
+//Ethan Gilles -- calculates greatest common divisor
+public static int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+//Ethan Gilles -- Calculates least common multiple
+public static int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+//Ethan Gilles
+	public boolean hasSameValue(Fraction input) {
+		// cross multiply
+        int cP1 = this.numerator * input.denominator;
+        int cP2 = input.numerator * this.denominator;
+
+        // fractions are equal if their cross products are the same
+        return cP1 == cP2;
+	}
+
+
 // Mandy Ho	
     public void insertionSort(Fraction[] input) {
         for (int i = 1; i < input.length; i++) {
