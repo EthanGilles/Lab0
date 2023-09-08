@@ -33,10 +33,13 @@ public Fraction minus(Fraction input) {
 
 
 @Override
-public Fraction divide(Fraction input) {
-	// TODO Auto-generated method stub
-	return null;
-}
+// Mandy Ho
+    public Fraction divide(Fraction input) {
+        int newNumerator = this.numerator * input.denominator;
+        int newDenominator = this.denominator * input.numerator;
+        Fraction result = new Fraction(newNumerator, newDenominator);
+        return result;
+    }
 
 
 //Nathaniel Serrano
