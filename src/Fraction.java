@@ -23,6 +23,7 @@ public Fraction plus(Fraction input) {
 
 
 //Coby Andersen
+	
 @Override
 public Fraction minus(Fraction input) {
 	int commonDenominator = this.denominator * input.denominator;
@@ -63,6 +64,7 @@ public Fraction multiply(Fraction input) {
         }
     }
 // Coby Andersen
+//Implements findFrequent Method
 public static Fraction findFrequent(Fraction[] input) {
         Map<Fraction, Integer> frequencyMap = new HashMap<>();
         Fraction mostFrequent = null;
