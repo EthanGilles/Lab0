@@ -36,7 +36,11 @@ public Fraction plus(Fraction input) {
 
 
 //Coby Andersen
-	
+	/**
+     * Subtracts another fraction from this fraction and returns the result as a new fraction.
+     * @param input The fraction to subtract from this fraction.
+     * @return A new fraction representing the result of the subtraction.
+     */
 @Override
 public Fraction minus(Fraction input) {
 	int commonDenominator = this.denominator * input.denominator;
@@ -112,7 +116,13 @@ public static int lcm(int a, int b) {
         }
     }
 // Coby Andersen
-//Implements findFrequent Method
+	/**
+     * Finds the most frequently occurring fraction in an array of fractions.
+     *
+     * @param input An array of fractions to search for the most frequent fraction.
+     * @return The most frequent fraction in the array. If multiple fractions have the same highest frequency,
+     *         the first one encountered in the array is returned.
+     */
 public static Fraction findFrequent(Fraction[] input) {
         Map<Fraction, Integer> frequencyMap = new HashMap<>();
         Fraction mostFrequent = null;
