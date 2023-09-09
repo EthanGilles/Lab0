@@ -56,7 +56,17 @@ public Fraction minus(Fraction input) {
     }
 
 
-//Nathaniel Serrano
+/**
+ * Nathaniel Serrano
+ * Implements multiple() method:
+ * Multiplies fractions by multiplying numerators together to
+ * create a new numerator and muliplying denominators together 
+ * to create a new denominator and creates a new fraction
+ * with the new numerator and denominator.
+ * @param input - a Fraction object
+ * @return result - a Fraction object equal to the product
+ * of the input and the instantiated Fraction.
+ */
 @Override
 public Fraction multiply(Fraction input) {
 	int newNumerator = this.numerator * input.numerator;
@@ -118,5 +128,25 @@ public static Fraction findFrequent(Fraction[] input) {
         }
 
         return mostFrequent;
+}
+/**
+ * Nathaniel Serrano
+ * Implements printReverse method:
+ * Prints last Fraction in array then creates a 
+ * new array that is a copy of the input minus the 
+ * last item. This new array is then used as the input
+ * for the method's recursive call on itself.
+ * @param inputArray - An array of Fractions
+ */
+public static void printReverse(Fraction[] inputArray) {
+	int indexOfLast = inputArray.length-1;
+	if (indexOfLast<0)
+		return;
+	System.out.print(inputArray[indexOfLast] + " ");
+	Fraction[] newArray = new Fraction[inputArray.length-1];
+	for (int i=0; i<inputArray.length-1;i++) {
+		newArray[i] = inputArray[i];
+	}	
+	printReverse(newArray);
 }
 }
