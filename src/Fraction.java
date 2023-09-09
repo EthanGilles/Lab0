@@ -58,8 +58,8 @@ public Fraction minus(Fraction input) {
 
 /**
  * Nathaniel Serrano
- * Implements multiple() method:
- * Multiplies fractions by multiplying numerators together to
+ * Implements multiply() method:
+ * Multiplies Fractions by multiplying numerators together to
  * create a new numerator and muliplying denominators together 
  * to create a new denominator and creates a new fraction
  * with the new numerator and denominator.
