@@ -12,13 +12,23 @@ public class Fraction implements INumber<Fraction>  {
   }
   
  
-//Ethan Gilles
+/**Ethan Gilles
+ * Prints a fraction object, by printing the numerator and denominator separated by a slash.
+ * @param input - none
+ * @return result - no return but prints the fraction.
+ */
  public void print() {
 	 System.out.println(this.numerator + "/" + this.denominator);
 }
 
 
-//Ethan Gilles
+/**Ethan Gilles
+ * Takes a fraction object and adds another fraction object, returning a new fraction object representing the sum
+ * @param input - A fraction object to add to the selected fraction
+ * @return result - A simplified fraction object that represents the two fractions added together
+ */
+ 
+ 
 public Fraction plus(Fraction input) {
 	int commonDenominator = lcm(this.denominator, input.denominator);
 	
@@ -71,6 +81,8 @@ public Fraction minus(Fraction input) {
  * @return result - a Fraction object equal to the product
  * of the input and the instantiated Fraction.
  */
+
+
 @Override
 public Fraction multiply(Fraction input) {
 	int newNumerator = this.numerator * input.numerator;
@@ -79,7 +91,11 @@ public Fraction multiply(Fraction input) {
 	return result;
 }
 
-//Ethan Gilles -- calculates greatest common divisor
+/**Ethan Gilles
+ * Gives the greatest common divisor for two integers
+ * @param input - two integers
+ * @return result - an integer that represents the greatest common divisor of the two inputs.
+ */
 public static int gcd(int a, int b) {
     if (b == 0) {
         return a;
@@ -87,12 +103,22 @@ public static int gcd(int a, int b) {
         return gcd(b, a % b);
     }
 }
-//Ethan Gilles -- Calculates least common multiple
+
+
+/** Ethan Gilles
+ * Gives the least common multiple of two integers
+ * @param input - two integers
+ * @return result - an integer that represents the least common multiple of two integers
+ */
 public static int lcm(int a, int b) {
     return (a * b) / gcd(a, b);
 }
 
-//Ethan Gilles
+/** Ethan Gilles
+ * returns if two fractions are the same or not
+ * @param input - A fraction being compared to the selected fraction
+ * @return - true if the fractions are equal, false if otherwise.
+ */
 	public boolean hasSameValue(Fraction input) {
 		// cross multiply
         int cP1 = this.numerator * input.denominator;
