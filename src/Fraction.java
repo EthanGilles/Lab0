@@ -185,4 +185,59 @@ public static void printReverse(Fraction[] inputArray) {
 	}	
 	printReverse(newArray);
 }
+
+public static void main(String[] args) {
+	
+	Fraction[] fractionArray = new Fraction[100];
+		for(int i=0; i<fractionArray.length; i++) {
+			fractionArray[i] = new Fraction(i, i+1);
+		}
+		
+		
+		
+		
+		
+		
+		/*Ethan Gilles
+		 * Testing for hasSameValue method
+		 * Outputs show that the method is functional to show two fractions with the same value
+		 */ 
+		System.out.println("--- hasSameValue Method ---");
+		System.out.print("Fraction 1: ");
+		fractionArray[1].print();
+		System.out.print("Fraction 2: ");
+		fractionArray[4].print();
+		System.out.print("Fraction 3: ");
+		Fraction frac3 = new Fraction(2,4);
+		frac3.print();
+		
+		
+		// comparisons of fractions using the hasSameValue method 
+		System.out.println("Fraction 1 compared to Fraction 2: " + fractionArray[1].hasSameValue(fractionArray[4]));
+		System.out.println("Fraction 1 compared to Fraction 3: " + fractionArray[1].hasSameValue(frac3));
+		
+		
+		
+		/*Ethan Gilles
+		 * testing for plus method
+		 * outputs show that the method is functional at adding two methods
+		 */
+		System.out.println("--- plus Method ---");
+		
+		System.out.print("Fraction 1: ");
+		fractionArray[1].print();
+		System.out.print("Fraction 2: ");
+		fractionArray[4].print();
+		System.out.print("Fraction 3: ");
+		frac3.print();
+		
+		// addition of fractions using the plus method
+		System.out.print("Fraction 1 + Fraction 2: ");
+		Fraction sum = fractionArray[1].plus(fractionArray[4]);
+		sum.print();
+		System.out.print("Fraction 1 + Fraction 3: ");
+		sum = fractionArray[1].plus(frac3);
+		sum.print();
+}
+
 }
