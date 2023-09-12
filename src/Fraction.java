@@ -63,8 +63,12 @@ public Fraction minus(Fraction input) {
      *
      * @param input The fraction to divide this fraction by.
      * @return A new fraction representing the result of the division.
+     * @throws ArithmeticException If the input fraction has a numerator of zero (division by zero)
      */
     public Fraction divide(Fraction input) {
+            if (input.numerator == 0) {
+        throw new ArithmeticException("Division by zero is not allowed.");
+    }
         int newNumerator = this.numerator * input.denominator;
         int newDenominator = this.denominator * input.numerator;
         Fraction result = new Fraction(newNumerator, newDenominator);
