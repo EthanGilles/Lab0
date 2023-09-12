@@ -57,7 +57,13 @@ public Fraction minus(Fraction input) {
 
 
 
-// Mandy Ho
+   /**
+     * Mandy Ho
+     * Divides this fraction by another fraction and returns the result as a new fraction.
+     *
+     * @param input The fraction to divide this fraction by.
+     * @return A new fraction representing the result of the division.
+     */
     public Fraction divide(Fraction input) {
         int newNumerator = this.numerator * input.denominator;
         int newDenominator = this.denominator * input.numerator;
@@ -124,7 +130,12 @@ public static int lcm(int a, int b) {
 	}
 
 
-// Mandy Ho	
+   /**
+     * Mandy Ho
+     * Sorts an array of fractions in ascending order using the insertion sort algorithm.
+     *
+     * @param input An array of fractions to be sorted.
+     */	
     public static void insertionSort(Fraction[] input) {
         for (int i = 1; i < input.length; i++) {
             Fraction current = input[i];
