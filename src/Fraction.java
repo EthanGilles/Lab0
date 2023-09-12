@@ -139,14 +139,19 @@ public static int lcm(int a, int b) {
      * Sorts an array of fractions in ascending order using the insertion sort algorithm.
      *
      * @param input An array of fractions to be sorted.
-     */	
+     */
     public static void insertionSort(Fraction[] input) {
         for (int i = 1; i < input.length; i++) {
             Fraction current = input[i];
             int j = i - 1;
-            while (j >= 0 && input[j].hasSameValue(current)) {
-                input[j + 1] = input[j];
-                j--;
+            // Compare fractions based on their values using hasSameValue method
+            while (j >= 0 && !input[j].hasSameValue(current)) {
+                if (input[j].numerator * current.denominator > current.numerator * input[j].denominator) {
+                    input[j + 1] = input[j];
+                    j--;
+                } else {
+                    break;
+                }
             }
             input[j + 1] = current;
         }
@@ -198,7 +203,9 @@ public static void printReverse(Fraction[] inputArray) {
 
 
 public static void main(String[] args) {
-	
+	// Test array for insertionSort
+        Fraction[] testArray = new Fraction[] { new Fraction(5, 6), new Fraction(3, 4), new Fraction(1, 2),
+                new Fraction(7, 8), new Fraction(1, 3) };
 	
 	//the fraction array described in the lab assignment
 	Fraction[] fractionArray = new Fraction[100];
@@ -310,27 +317,26 @@ public static void main(String[] args) {
 		mostFrequent.print();
 		System.out.println();
 		
-		/*Ethan Gilles & Mandy Ho
-		 * Testing for insertionSort method
-		 * Outputs show that the method is functional to sort the array using the insertion sort algorithm
-		 */ 
-		System.out.println("--- insertionSort Method ---");
-		
-		// Display the array before the sort
-		System.out.println("before: ");
-		for (Fraction frac : fractionArray) {
-		System.out.println(frac.numerator + "/" + frac.denominator);
-		}
-		System.out.println("]");
-		
-		insertionSort(fractionArray);
-		
-		// Display the array after the sort
-		System.out.println("after: ");
-		for (Fraction frac : fractionArray) {
-		System.out.println(frac.numerator + "/" + frac.denominator);
-		}
-		System.out.println("]");
+		/*
+                 * Ethan Gilles & Mandy Ho Testing for insertionSort method Outputs show that
+                 * the method is functional to sort the array using the insertion sort algorithm
+                 */
+                System.out.println("--- insertionSort Method ---");
+                // Display the array before the sort
+               System.out.print("before: ");
+               for (Fraction frac : testArray) {
+                 frac.print();
+                 System.out.print(", ");
+                 }
+               System.out.println("]");
+             insertionSort(testArray);
+        // Display the array after the sort
+        System.out.print("after: ");
+        for (Fraction frac : testArray) {
+            frac.print();
+            System.out.print(", ");
+        }
+        System.out.println("]");
 		
 		/*Ethan Gilles
 		 * Testing for printReverse method
