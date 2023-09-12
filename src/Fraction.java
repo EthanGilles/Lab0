@@ -310,27 +310,25 @@ public static void main(String[] args) {
 		mostFrequent.print();
 		System.out.println();
 		
-		/*Ethan Gilles
+		/*Ethan Gilles & Mandy Ho
 		 * Testing for insertionSort method
 		 * Outputs show that the method is functional to sort the array using the insertion sort algorithm
 		 */ 
 		System.out.println("--- insertionSort Method ---");
 		
-		//shows the array before the sort
-		System.out.print("before: [");
+		// Display the array before the sort
+		System.out.println("before: ");
 		for (Fraction frac : fractionArray) {
-			frac.print();
-			System.out.print(", ");
+		System.out.println(frac.numerator + "/" + frac.denominator);
 		}
 		System.out.println("]");
 		
 		insertionSort(fractionArray);
 		
-		//shows the array after the sort
-		System.out.print("after:  [");
+		// Display the array after the sort
+		System.out.println("after: ");
 		for (Fraction frac : fractionArray) {
-			frac.print();
-			System.out.print(", ");
+		System.out.println(frac.numerator + "/" + frac.denominator);
 		}
 		System.out.println("]");
 		
