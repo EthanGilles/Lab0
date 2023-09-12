@@ -193,7 +193,8 @@ public static void printReverse(Fraction[] inputArray) {
 	int indexOfLast = inputArray.length-1;
 	if (indexOfLast<0)
 		return;
-	System.out.print(inputArray[indexOfLast] + " ");
+	inputArray[indexOfLast].print();
+	System.out.print(", ");
 	Fraction[] newArray = new Fraction[inputArray.length-1];
 	for (int i=0; i<inputArray.length-1;i++) {
 		newArray[i] = inputArray[i];
@@ -354,8 +355,9 @@ public static void main(String[] args) {
 		System.out.println("]");
 		
 		
-		System.out.print("after:  ");
+		System.out.print("after:  [");
 		printReverse(fractionArray);
+		System.out.print("]");
 		
 }
 
