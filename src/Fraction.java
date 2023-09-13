@@ -10,7 +10,7 @@ public class Fraction implements INumber<Fraction>  {
 	  numerator = n;
 	  denominator = d;
   }
-  
+  kjfhkvgjfhgkljfh
  
 /**Ethan Gilles
  * Prints a fraction object, by printing the numerator and denominator separated by a slash.
