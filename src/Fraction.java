@@ -207,6 +207,11 @@ public static void main(String[] args) {
 	// Test array for insertionSort
         Fraction[] testArray = new Fraction[] { new Fraction(5, 6), new Fraction(3, 4), new Fraction(1, 2),
                 new Fraction(7, 8), new Fraction(1, 3) };
+        
+        
+   // Test array for findFrequent
+        Fraction[] testArray2 = new Fraction[] { new Fraction(5, 6), new Fraction(3, 4), new Fraction(1, 2),
+                new Fraction(5, 6), new Fraction(1, 2), new Fraction(5, 6), new Fraction(8, 15), new Fraction(3, 4)};
 	
 	//the fraction array described in the lab assignment
 	Fraction[] fractionArray = new Fraction[100];
@@ -311,8 +316,16 @@ public static void main(String[] args) {
 		 */ 
 		System.out.println("--- findFrequent Method ---");
 		
+		//shows the test array for the findFrequent method
+				System.out.print("Test array: [");
+				for (Fraction frac : testArray2) {
+					frac.print();
+					System.out.print(", ");
+				}
+				System.out.println("]");
+		
 		//calling the find frequent method to find the most common fraction in the array.
-		Fraction mostFrequent = findFrequent(fractionArray);
+		Fraction mostFrequent = findFrequent(testArray2);
 		
 		System.out.print("The most frequent fraction was: ");
 		mostFrequent.print();
@@ -324,7 +337,7 @@ public static void main(String[] args) {
                  */
                 System.out.println("--- insertionSort Method ---");
                 // Display the array before the sort
-               System.out.print("before: ");
+               System.out.print("before: [");
                for (Fraction frac : testArray) {
                  frac.print();
                  System.out.print(", ");
@@ -332,14 +345,14 @@ public static void main(String[] args) {
                System.out.println("]");
              insertionSort(testArray);
         // Display the array after the sort
-        System.out.print("after: ");
+        System.out.print("after:  [");
         for (Fraction frac : testArray) {
             frac.print();
             System.out.print(", ");
         }
         System.out.println("]");
 		
-		/*Ethan Gilles
+		/*Nathaniel Serrano
 		 * Testing for printReverse method
 		 * Outputs show that the method is functional to print a fraction array in reverse.
 		 */ 
